@@ -1,10 +1,10 @@
-# Mbaye Diouf — Entrepreneur maçon | DIGIY BUILD
+[README-kourant-final (1).md](https://github.com/user-attachments/files/28934404/README-kourant-final.1.md)# Zal & Kourant — Électriciens | DIGIY BUILD
 
-Fiche publique DIGIYLYFE pour présenter Mbaye Diouf, entrepreneur maçon / bâtisseur sur le secteur de Saly, Mbour, Thiès et Petite Côte.
+Fiche publique DIGIYLYFE pour présenter Zal & Kourant, service d’électricité et petits travaux électriques sur le secteur de Saly et Petite Côte.
 
 ## Lien public
 
-https://mbaye-macon.digiylyfe.com/
+https://kourant.digiylyfe.com/
 
 ## Rôle de la fiche
 
@@ -30,7 +30,7 @@ Cette page sert de fiche publique partageable :
 Le fichier `CNAME` doit contenir uniquement :
 
 ```text
-mbaye-macon.digiylyfe.com
+kourant.digiylyfe.com
 ```
 
 ## Mise en ligne GitHub Pages
@@ -39,7 +39,7 @@ mbaye-macon.digiylyfe.com
 2. Poser `README.md` à la racine du repo.
 3. Poser `CNAME` à la racine du repo.
 4. Activer GitHub Pages sur la branche principale.
-5. Vérifier que le domaine ouvre bien : https://mbaye-macon.digiylyfe.com/
+5. Vérifier que le domaine ouvre bien : https://kourant.digiylyfe.com/
 
 ## Doctrine DIGIY
 
@@ -54,4 +54,5 @@ Le professionnel garde son nom, son client, son argent et sa décision.
 
 Le QR est généré automatiquement depuis l’URL réelle de la page.  
 Une fois la fiche posée sur GitHub Pages, le QR pointera vers le bon lien public.
+
 
