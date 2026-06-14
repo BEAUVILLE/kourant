@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Zal &amp; Kourant — Électriciens | DIGIYLYFE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Zal &amp; Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct.">
+  <meta name="theme-color" content="#06130f">
+
+  <meta property="og:title" content="Zal &amp; Kourant — Électriciens">
+  <meta property="og:description" content="Installation, rénovation, dépannage électrique · Saly · Contact direct">
+  <meta property="og:image" content="https://digiylyfe.net/wp-content/uploads/2026/05/ChatGPT-Image-14-mai-2026-03_59_29.png">
+  <meta property="og:type" content="website">
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#06130f;
+      --card:#0b241b;
+      --line:rgba(255,255,255,.12);
+      --ink:#f8fafc;
+      --muted:rgba(248,250,252,.76);
+      --gold:#d4af37;
+      --gold2:#f3d46b;
+      --green:#22c55e;
+      --orange:#f97316;
+      --radius:24px;
+      --shadow:0 24px 60px rgba(0,0,0,.32);
+      --font:"Outfit",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-height:100vh;
+      color:var(--ink);
+      font-family:var(--font);
+      background:
+        radial-gradient(900px 520px at 8% -10%, rgba(212,175,55,.14), transparent 58%),
+        radial-gradient(850px 520px at 100% 0%, rgba(249,115,22,.12), transparent 55%),
+        radial-gradient(900px 520px at 100% 100%, rgba(34,197,94,.10), transparent 58%),
+        linear-gradient(180deg, #071510 0%, #06130f 48%, #04100c 100%);
+      padding-bottom:calc(96px + env(safe-area-inset-bottom,0px));
+    }
+
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    .wrap{
+      width:min(100%,1120px);
+      margin:0 auto;
+      padding:16px 14px 42px;
+      display:grid;
+      gap:16px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      min-width:0;
+    }
+
+    .logo{
+      width:58px;
+      height:58px;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,.24);
+      background:#fff;
+      flex:0 0 auto;
+      box-shadow:0 10px 28px rgba(0,0,0,.20);
+    }
+
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .kicker{
+      color:var(--gold2);
+      font-size:13px;
+      font-weight:1000;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:4px;
+    }
+
+    .title{
+      font-size:clamp(24px,3vw,36px);
+      font-weight:1000;
+      line-height:1.05;
+      letter-spacing:-.04em;
+    }
+
+    .sub{
+      margin-top:5px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.45;
+      font-weight:800;
+    }
+
+    .topActions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      min-height:56px;
+      border:none;
+      border-radius:17px;
+      padding:14px 17px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-size:17px;
+      font-weight:1000;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:filter .18s ease, transform .08s ease;
+      text-align:center;
+    }
+
+    .btn:active{transform:translateY(1px) scale(.99)}
+    .btn.primary{
+      background:linear-gradient(135deg,var(--orange),var(--gold2));
+      color:#13200d;
+      box-shadow:0 14px 30px rgba(249,115,22,.22);
+    }
+
+    .btn.secondary{
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--ink);
+    }
+
+    .btn.green{
+      background:rgba(34,197,94,.14);
+      border:1px solid rgba(34,197,94,.30);
+      color:#bbf7d0;
+    }
+
+    .btn.call{
+      background:rgba(255,255,255,.065);
+      border:1px solid rgba(255,255,255,.14);
+      color:#fff7c2;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns:1.04fr .96fr;
+      gap:16px;
+    }
+
+    .panel{
+      background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .poster{
+      background:#06130f;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:560px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    .poster img{
+      width:100%;
+      max-height:760px;
+      object-fit:contain;
+      display:block;
+      padding:10px;
+    }
+
+    .body{padding:22px}
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(36px,7vw,64px);
+      line-height:1;
+      letter-spacing:-.055em;
+    }
+
+    .lead{
+      margin:0;
+      color:#fff3b2;
+      font-size:clamp(20px,3vw,28px);
+      font-weight:1000;
+      line-height:1.25;
+    }
+
+    .text{
+      margin-top:18px;
+      color:#eef6f2;
+      font-size:19px;
+      font-weight:800;
+      line-height:1.7;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:16px;
+    }
+
+    .chip{
+      min-height:38px;
+      padding:0 13px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      background:rgba(212,175,55,.09);
+      border:1px solid rgba(212,175,55,.20);
+      color:var(--gold2);
+      font-size:15px;
+      font-weight:1000;
+    }
+
+    .chip.ok{
+      border-color:rgba(34,197,94,.26);
+      background:rgba(34,197,94,.10);
+      color:#bbf7d0;
+    }
+
+    .serviceBox{
+      margin-top:18px;
+      padding:18px;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.16);
+    }
+
+    .serviceBox h2{
+      margin:0 0 10px;
+      font-size:22px;
+      color:var(--gold2);
+      letter-spacing:-.02em;
+    }
+
+    .serviceBox ul{
+      margin:0;
+      padding-left:20px;
+      color:#f6fbf8;
+      font-size:17px;
+      font-weight:850;
+      line-height:1.65;
+    }
+
+    .side{
+      padding:18px;
+      display:grid;
+      gap:12px;
+      align-content:start;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015)),
+        linear-gradient(180deg,#0a1c16,#0d241c);
+    }
+
+    .qrCard{
+      border:1px solid rgba(212,175,55,.28);
+      border-radius:26px;
+      background:radial-gradient(420px 180px at 50% 0%, rgba(212,175,55,.15), transparent 62%),rgba(0,0,0,.15);
+      padding:18px;
+      display:grid;
+      gap:12px;
+      text-align:center;
+    }
+
+    .qrKicker{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:8px;
+      margin:auto;
+      padding:9px 13px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.28);
+      background:rgba(212,175,55,.11);
+      color:#fde68a;
+      font-size:16px;
+      font-weight:1000;
+    }
+
+    .qrImg{
+      width:min(100%,250px);
+      height:auto;
+      margin:auto;
+      display:block;
+      border-radius:22px;
+      background:#fff;
+      padding:12px;
+      border:1px solid rgba(212,175,55,.42);
+      box-shadow:0 14px 34px rgba(0,0,0,.34);
+    }
+
+    .qrTitle{
+      font-size:28px;
+      line-height:1.08;
+      font-weight:1000;
+      color:var(--gold2);
+    }
+
+    .qrText{
+      color:var(--muted);
+      font-size:17px;
+      line-height:1.45;
+      font-weight:900;
+    }
+
+    .qrLink{
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.18);
+      padding:10px;
+      word-break:break-word;
+      font-size:13px;
+      line-height:1.35;
+      color:rgba(248,250,252,.72);
+      font-weight:900;
+    }
+
+    .actions{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+    }
+
+    .miniStat{
+      border:1px solid rgba(255,255,255,.09);
+      border-radius:19px;
+      padding:15px;
+      background:rgba(255,255,255,.035);
+    }
+
+    .miniLabel{
+      color:rgba(248,250,252,.58);
+      font-size:13px;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+
+    .miniValue{
+      font-size:23px;
+      font-weight:1000;
+      line-height:1.15;
+      letter-spacing:-.035em;
+      word-break:break-word;
+    }
+
+    .miniHint{
+      margin-top:7px;
+      color:var(--muted);
+      font-size:16px;
+      font-weight:800;
+      line-height:1.45;
+    }
+
+    .foot{
+      margin-top:2px;
+      color:var(--muted);
+      font-size:15px;
+      font-weight:850;
+      line-height:1.6;
+      text-align:center;
+    }
+
+    .bottomNav{
+      position:fixed;
+      left:0;
+      right:0;
+      bottom:0;
+      z-index:99990;
+      padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));
+      background:rgba(6,19,15,.95);
+      border-top:1px solid rgba(255,255,255,.10);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    .bottomInner{
+      width:min(100%,760px);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:6px;
+    }
+
+    .bottomInner a,
+    .bottomInner button{
+      min-height:62px;
+      border-radius:17px;
+      display:grid;
+      place-items:center;
+      align-content:center;
+      gap:3px;
+      color:rgba(248,250,252,.75);
+      font-size:12px;
+      font-weight:1000;
+      text-align:center;
+      border:1px solid transparent;
+      text-decoration:none;
+      background:transparent;
+      cursor:pointer;
+      padding:0 4px;
+    }
+
+    .bottomInner .active{
+      color:#13200d;
+      background:linear-gradient(135deg,var(--orange),var(--gold2));
+    }
+
+    .ico{font-size:20px;line-height:1}
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:calc(96px + env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%) translateY(12px);
+      z-index:99999;
+      opacity:0;
+      pointer-events:none;
+      transition:.22s ease;
+      max-width:calc(100vw - 24px);
+      padding:12px 18px;
+      border-radius:999px;
+      border:1px solid rgba(243,212,107,.28);
+      background:rgba(16,38,30,.97);
+      color:var(--gold2);
+      font-size:15px;
+      font-weight:1000;
+      box-shadow:var(--shadow);
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    @media(max-width:980px){.hero{grid-template-columns:1fr}}
+    @media(max-width:640px){
+      .wrap{padding:12px 10px 36px}
+      .topActions{display:none}
+      .poster{min-height:430px}
+      .body,.side{padding:18px}
+      .btn{width:100%;min-height:62px;font-size:18px}
+      .qrImg{width:min(82vw,270px)}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">
+          <img src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg" alt="Logo DIGIYLYFE">
+        </div>
+        <div>
+          <div class="kicker">Je propose mes services</div>
+          <div class="title">Zal &amp; Kourant</div>
+          <div class="sub">Électriciens · Saly · Petite Côte</div>
+        </div>
+      </div>
+
+      <div class="topActions">
+        <a class="btn secondary" href="https://build.digiylyfe.com/listing.html">Retour galerie</a>
+        <a class="btn secondary" href="https://digiylyfe.com/">Site</a>
+        <a class="btn secondary" href="https://digiy-hub.digiylyfe.com/">HUB</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <main class="panel">
+        <div class="poster">
+          <img src="https://digiylyfe.net/wp-content/uploads/2026/05/ChatGPT-Image-14-mai-2026-03_59_29.png" alt="Zal et Kourant — électriciens à Saly" loading="eager">
+        </div>
+
+        <div class="body">
+          <h1>Zal &amp; Kourant</h1>
+          <p class="lead">Électriciens · installation · rénovation · dépannage</p>
+
+          <div class="chips">
+            <span class="chip ok">Contact direct</span>
+            <span class="chip">Électricité</span>
+            <span class="chip">Dépannage</span>
+            <span class="chip">Installation</span>
+            <span class="chip">Rénovation</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Éclairage</span>
+            <span class="chip">Saly</span>
+          </div>
+
+          <div class="text">Installation neuve, rénovation, mise aux normes, tableau, disjoncteurs, terre, dépannage panne, prise, éclairage et petits chantiers de finition. Le client voit le métier, la zone, le contact direct et peut partager la fiche facilement.</div>
+
+          <div class="serviceBox">
+            <h2>Services utiles</h2>
+            <ul>
+              <li>Installation électrique neuve pour maison, boutique ou local.</li>
+              <li>Rénovation, mise aux normes, tableau, disjoncteurs et terre.</li>
+              <li>Dépannage panne, prise, éclairage et petits chantiers de finition.</li>
+              <li>Intervention selon disponibilité, besoin et sécurité du chantier.</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <aside class="panel side">
+        <article class="qrCard" id="qr" aria-label="QR de la fiche Zal &amp; Kourant">
+          <div class="qrKicker">📲 QR fiche</div>
+          <a id="qrAnchor" href="#" target="_blank" rel="noopener">
+            <img id="qrImg" class="qrImg" alt="QR fiche Zal &amp; Kourant DIGIY BUILD">
+          </a>
+          <div class="qrTitle">Scanne cette fiche</div>
+          <div class="qrText">Ce QR ouvre directement la fiche Zal &amp; Kourant. Lecture, partage, affichage terrain.</div>
+          <div class="qrLink" id="qrLinkText">Préparation du lien…</div>
+        </article>
+
+        <div class="miniStat">
+          <div class="miniLabel">Métier</div>
+          <div class="miniValue">Électriciens</div>
+          <div class="miniHint">Installation, rénovation, dépannage électrique, tableau, prises et éclairage.</div>
+        </div>
+
+        <div class="miniStat">
+          <div class="miniLabel">Zone</div>
+          <div class="miniValue">Saly · Petite Côte</div>
+          <div class="miniHint">Intervention selon disponibilité, visite et besoin du client.</div>
+        </div>
+
+        <div class="miniStat">
+          <div class="miniLabel">Contact direct</div>
+          <div class="miniValue">+221 77 208 47 81</div>
+          <div class="miniHint">Le client écrit ou appelle directement le professionnel.</div>
+        </div>
+
+        <div class="miniStat">
+          <div class="miniLabel">Prix</div>
+          <div class="miniValue">À partir de 10 000 FCFA</div>
+          <div class="miniHint">Dépannage selon la panne, le déplacement, le matériel et le chantier.</div>
+        </div>
+
+        <div class="actions">
+          <a id="waBtn" class="btn primary" href="#">💬 WhatsApp direct</a>
+          <a id="callBtn" class="btn call" href="#">📞 Appeler</a>
+          <a class="btn secondary" href="https://build.digiylyfe.com/request.html?slug=partenaires-zal-kourant&amp;nom=Zal%20%26%20Kourant&amp;metier=%C3%89lectricien&amp;ville=Saly">📄 Décrire mon besoin</a>
+          <button class="btn secondary" id="copyBtn" type="button">📋 Copier la fiche</button>
+          <button class="btn green" id="shareBtn" type="button">📤 Partager</button>
+        </div>
+      </aside>
+    </section>
+
+    <div class="foot">
+      DIGIY BUILD • fiche publique • QR visible • métier clair • secteur • contact direct • sans PIN • sans cockpit
+    </div>
+  </div>
+
+  <nav class="bottomNav" aria-label="Navigation Zal &amp; Kourant">
+    <div class="bottomInner">
+      <a href="https://build.digiylyfe.com/listing.html"><span class="ico">←</span><span>Galerie</span></a>
+      <a class="active" href="#qr"><span class="ico">📲</span><span>QR</span></a>
+      <a id="bottomWa" href="#"><span class="ico">💬</span><span>WhatsApp</span></a>
+      <button id="bottomShare" type="button"><span class="ico">📤</span><span>Partager</span></button>
+    </div>
+  </nav>
+
+  <div class="toast" id="toast">Lien copié</div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Zal &amp; Kourant",
+    "description": "Zal &amp; Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct.",
+    "image": "https://digiylyfe.net/wp-content/uploads/2026/05/ChatGPT-Image-14-mai-2026-03_59_29.png",
+    "telephone": "+221772084781",
+    "areaServed": "Saly · Petite Côte",
+    "priceRange": "À partir de 10 000 FCFA"
+  }
+  </script>
+
+  <script>
+    (function(){
+      "use strict";
+
+      const PHONE = "221772084781";
+      const PHONE_TEL = "+221772084781";
+      const NAME = "Zal & Kourant";
+      const TRADE = "Électricité";
+
+      function currentUrl(){
+        const u = new URL(location.href);
+        ["phone","tel","owner_phone","contact_phone","whatsapp","return","from","pin","token"].forEach(k => u.searchParams.delete(k));
+        return u.toString();
+      }
+
+      const profileUrl = currentUrl();
+
+      function whatsappUrl(){
+        const msg = encodeURIComponent(`Bonjour ${NAME}, je viens de DIGIYLYFE pour votre service ${TRADE}.`);
+        return `https://wa.me/${PHONE}?text=${msg}`;
+      }
+
+      function qrFallbackUrl(value){
+        const u = new URL("https://api.qrserver.com/v1/create-qr-code/");
+        u.searchParams.set("size","560x560");
+        u.searchParams.set("margin","16");
+        u.searchParams.set("data", value);
+        return u.toString();
+      }
+
+      function setQr(){
+        const img = document.getElementById("qrImg");
+        const anchor = document.getElementById("qrAnchor");
+        const linkText = document.getElementById("qrLinkText");
+        if(anchor) anchor.href = profileUrl;
+        if(linkText) linkText.textContent = profileUrl;
+
+        function fallback(){
+          img.src = qrFallbackUrl(profileUrl);
+        }
+
+        try{
+          if(window.QRCode && typeof window.QRCode.toDataURL === "function"){
+            window.QRCode.toDataURL(profileUrl, {
+              width:560,
+              margin:1,
+              errorCorrectionLevel:"M",
+              color:{dark:"#111827", light:"#FFFFFF"}
+            }, (err, dataUrl) => {
+              if(err || !dataUrl) fallback();
+              else img.src = dataUrl;
+            });
+          }else{
+            fallback();
+          }
+        }catch(_){
+          fallback();
+        }
+      }
+
+      async function copy(value){
+        try{
+          await navigator.clipboard.writeText(value);
+          toast("Lien copié");
+        }catch(_){
+          window.prompt("Copie le lien :", value);
+        }
+      }
+
+      async function share(){
+        try{
+          if(navigator.share){
+            await navigator.share({
+              title:`${NAME} — DIGIY BUILD`,
+              text:`${TRADE} · contact direct`,
+              url:profileUrl
+            });
+            return;
+          }
+        }catch(_){}
+        copy(profileUrl);
+      }
+
+      function toast(text){
+        const t = document.getElementById("toast");
+        t.textContent = text || "Lien copié";
+        t.classList.add("show");
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => t.classList.remove("show"), 1900);
+      }
+
+      document.getElementById("waBtn").href = whatsappUrl();
+      document.getElementById("bottomWa").href = whatsappUrl();
+      document.getElementById("callBtn").href = `tel:${PHONE_TEL}`;
+      document.getElementById("copyBtn").onclick = () => copy(profileUrl);
+      document.getElementById("shareBtn").onclick = share;
+      document.getElementById("bottomShare").onclick = share;
+
+      setQr();
+    })();
+  </script>
+  <script src="https://pro-action-digiy.digiylyfe.com/assets/js/digiy-retour-voix.js?v=retour-voix-20260606-v4" defer></script>
+</body>
+</html>
