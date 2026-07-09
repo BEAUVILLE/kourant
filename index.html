@@ -3,9 +3,9 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<title>Zal &amp; Kourant — Électriciens | DIGIYLYFE</title>
+<title>Zal &amp; Kourant — Électriciens | DIGIYLYFE.COM</title>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<meta content="Zal &amp; Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct." name="description"/>
+<meta content="Zal &amp; Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct via DIGIYLYFE.COM." name="description"/>
 <meta content="#06130f" name="theme-color"/>
 <link href="https://kourant.digiylyfe.com/" rel="canonical"/>
 <meta content="https://kourant.digiylyfe.com/" property="og:url"/>
@@ -532,6 +532,88 @@
       font-weight:1000;
     }
 
+
+    /* ===== MARQUE MÈRE DIGIYLYFE.COM ===== */
+    .digiyMotherBrand{
+      margin-top:16px;
+      display:grid;
+      gap:6px;
+      padding:16px;
+      border-radius:22px;
+      border:1px solid rgba(243,212,107,.42);
+      background:
+        radial-gradient(420px 160px at 0% 0%,rgba(243,212,107,.18),transparent 62%),
+        linear-gradient(135deg,rgba(249,115,22,.16),rgba(34,197,94,.10)),
+        rgba(0,0,0,.20);
+      color:#f8fafc;
+      box-shadow:0 14px 32px rgba(0,0,0,.18);
+    }
+    .digiyMotherBrand span{
+      color:#bbf7d0;
+      font-size:13px;
+      font-weight:1000;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .digiyMotherBrand strong{
+      color:var(--gold2);
+      font-size:clamp(24px,4vw,36px);
+      line-height:1;
+      font-weight:1000;
+      letter-spacing:-.03em;
+    }
+    .digiyMotherBrand em{
+      color:#fff7c2;
+      font-style:normal;
+      font-size:15px;
+      line-height:1.45;
+      font-weight:900;
+    }
+    .digiyMotherBrand:hover{
+      border-color:rgba(243,212,107,.68);
+      filter:brightness(1.06);
+    }
+    .digiyComSeal{
+      color:#13200d !important;
+      background:linear-gradient(135deg,var(--orange),var(--gold2)) !important;
+      border-color:rgba(243,212,107,.76) !important;
+      text-transform:uppercase !important;
+      letter-spacing:.06em !important;
+    }
+    .digiyComQr{
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      min-height:44px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--orange),var(--gold2));
+      color:#13200d;
+      font-size:14px;
+      font-weight:1000;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+      box-shadow:0 10px 24px rgba(249,115,22,.18);
+    }
+    .digiyMotherFooter{
+      margin-top:12px;
+      padding:13px 14px;
+      border-radius:20px;
+      border:1px solid rgba(243,212,107,.34);
+      background:rgba(0,0,0,.18);
+      color:#f8fafc;
+      text-align:center;
+      font-size:15px;
+      font-weight:900;
+      line-height:1.55;
+    }
+    .digiyMotherFooter a{
+      color:var(--gold2);
+      font-weight:1000;
+      text-decoration:none;
+    }
+    .digiyMotherFooter a:hover{text-decoration:underline;}
+
     @media(max-width:980px){.hero{grid-template-columns:1fr}}
     @media(max-width:640px){
       .wrap{padding:12px 10px 36px}
@@ -589,7 +671,7 @@
 </div>
 <div class="topActions">
 <a class="btn secondary" data-i18n="top_gallery" href="https://build.digiylyfe.com/listing.html">Retour galerie</a>
-<a class="btn secondary" data-i18n="top_site" href="https://digiylyfe.com/">Site</a>
+<a class="btn secondary" data-i18n="top_site" href="https://digiylyfe.com/" rel="noopener" target="_blank">DIGIYLYFE.COM</a>
 <a class="btn secondary" data-i18n="top_hub" href="https://digiy-hub.digiylyfe.com/">HUB</a>
 </div>
 <div aria-label="Changer la langue" class="langSwitch"><button class="active" id="lang-fr" type="button">FR</button><button id="lang-en" type="button">EN</button></div></header>
@@ -611,6 +693,11 @@
 <span class="chip" data-i18n="chip_lighting">Éclairage</span>
 <span class="chip" data-i18n="chip_saly">Saly</span>
 </div>
+<a class="digiyMotherBrand" href="https://digiylyfe.com/" target="_blank" rel="noopener" aria-label="Ouvrir DIGIYLYFE.COM">
+  <span>Marque mère officielle</span>
+  <strong>DIGIYLYFE.COM</strong>
+  <em>Zal &amp; Kourant reste le professionnel terrain. DIGIYLYFE.COM porte la route digitale, le QR officiel et la présence publique.</em>
+</a>
 <div class="text" data-i18n="main_text">Installation neuve, rénovation, mise aux normes, tableau, disjoncteurs, terre, dépannage panne, prise, éclairage et petits chantiers de finition. Le client voit le métier, la zone, le contact direct et peut partager la fiche facilement.</div>
 <div class="serviceBox">
 <h2 data-i18n="services_title">Services utiles</h2>
@@ -625,6 +712,7 @@
 <div class="digiyOfficialTop">
 <span class="digiySeal" data-i18n="seal_qr">▣ QR officiel DIGIYLYFE</span>
 <span class="digiySeal green" data-i18n="seal_direct">Contact direct · 0% commission</span>
+<a class="digiySeal digiyComSeal" href="https://digiylyfe.com/" target="_blank" rel="noopener">DIGIYLYFE.COM</a>
 </div>
 <div class="digiyOfficialText" data-i18n="official_text">
               Cette fiche est une route directe entre le client et le professionnel :
@@ -647,6 +735,7 @@
 <div data-i18n="qr_seal_1">Contact direct · devis direct · 0% commission.</div>
 <div>La valeur du business reste dans la main du pro local.</div>
 </div>
+<a class="digiyComQr" href="https://digiylyfe.com/" target="_blank" rel="noopener">Maison mère · DIGIYLYFE.COM</a>
 <div class="qrLink" data-i18n="qr_preparing" id="qrLinkText">Préparation du lien…</div>
 </article>
 <div class="miniStat">
@@ -680,6 +769,9 @@
 </section>
 <div class="foot" data-i18n="foot">
       DIGIY BUILD • fiche publique officielle • QR DIGIYLYFE • métier clair • secteur • contact direct • 0% commission • sans PIN
+    </div>
+    <div class="digiyMotherFooter">
+      Maison mère : <a href="https://digiylyfe.com/" target="_blank" rel="noopener">DIGIYLYFE.COM</a> · la marque porte la route digitale, le professionnel garde le contact direct.
     </div>
 </div>
 <nav aria-label="Navigation Zal &amp; Kourant" class="bottomNav">
@@ -716,14 +808,14 @@
 
       const I18N = {
         fr: {
-          page_title:"Zal & Kourant — Électriciens | DIGIYLYFE",
-          meta_description:"Zal & Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct.",
+          page_title:"Zal & Kourant — Électriciens | DIGIYLYFE.COM",
+          meta_description:"Zal & Kourant, électriciens à Saly et Petite Côte. Installation neuve, rénovation, dépannage, tableau, disjoncteurs, prises et éclairage. Contact direct via DIGIYLYFE.COM.",
           og_title:"Zal & Kourant — Électriciens",
           og_description:"Installation, rénovation, dépannage électrique · Saly · Contact direct",
           header_kicker:"Je propose mes services",
           header_sub:"Électriciens · Saly · Petite Côte",
           top_gallery:"Retour galerie",
-          top_site:"Site",
+          top_site:"DIGIYLYFE.COM",
           top_hub:"HUB",
           lead:"Électriciens · installation · rénovation · dépannage",
           chip_contact:"Contact direct",
@@ -767,7 +859,7 @@
           btn_request:"📄 Décrire mon besoin",
           btn_copy:"📋 Copier la fiche",
           btn_share:"📤 Partager",
-          foot:"DIGIY BUILD • fiche publique officielle • QR DIGIYLYFE • métier clair • secteur • contact direct • 0% commission • sans PIN",
+          foot:"DIGIY BUILD • fiche publique officielle • QR DIGIYLYFE.COM • métier clair • secteur • contact direct • 0% commission • sans PIN",
           bottom_gallery:"Galerie",
           bottom_qr:"QR",
           bottom_whatsapp:"WhatsApp",
@@ -776,18 +868,18 @@
           copied:"Lien copié",
           prompt_copy:"Copie le lien :",
           share_title:"Zal & Kourant — Fiche officielle DIGIY BUILD",
-          share_text:"Électricité · contact direct · 0% commission · QR officiel DIGIYLYFE",
+          share_text:"Électricité · contact direct · 0% commission · QR officiel DIGIYLYFE.COM",
           whatsapp_msg:"Bonjour Zal & Kourant, je viens de votre fiche officielle DIGIYLYFE pour votre service Électricité. Je souhaite vous expliquer mon besoin."
         },
         en: {
-          page_title:"Zal & Kourant — Electricians | DIGIYLYFE",
-          meta_description:"Zal & Kourant, electricians in Saly and Petite Côte. New installation, renovation, troubleshooting, panels, breakers, sockets and lighting. Direct contact.",
+          page_title:"Zal & Kourant — Electricians | DIGIYLYFE.COM",
+          meta_description:"Zal & Kourant, electricians in Saly and Petite Côte. New installation, renovation, troubleshooting, panels, breakers, sockets and lighting. Direct contact via DIGIYLYFE.COM.",
           og_title:"Zal & Kourant — Electricians",
           og_description:"Installation, renovation, electrical troubleshooting · Saly · Direct contact",
           header_kicker:"I offer my services",
           header_sub:"Electricians · Saly · Petite Côte",
           top_gallery:"Back to gallery",
-          top_site:"Site",
+          top_site:"DIGIYLYFE.COM",
           top_hub:"HUB",
           lead:"Electricians · installation · renovation · troubleshooting",
           chip_contact:"Direct contact",
@@ -831,7 +923,7 @@
           btn_request:"📄 Describe my need",
           btn_copy:"📋 Copy the card",
           btn_share:"📤 Share",
-          foot:"DIGIY BUILD • official public card • DIGIYLYFE QR • clear trade • area • direct contact • 0% commission • no PIN",
+          foot:"DIGIY BUILD • official public card • DIGIYLYFE.COM QR • clear trade • area • direct contact • 0% commission • no PIN",
           bottom_gallery:"Gallery",
           bottom_qr:"QR",
           bottom_whatsapp:"WhatsApp",
@@ -840,7 +932,7 @@
           copied:"Link copied",
           prompt_copy:"Copy the link:",
           share_title:"Zal & Kourant — Official DIGIY BUILD card",
-          share_text:"Electrical work · direct contact · 0% commission · official DIGIYLYFE QR",
+          share_text:"Electrical work · direct contact · 0% commission · official DIGIYLYFE.COM QR",
           whatsapp_msg:"Hello Zal & Kourant, I am coming from your official DIGIYLYFE card for your electrical service. I would like to explain my need."
         }
       };
@@ -992,5 +1084,6 @@
 <script src="./action-digiy-public-annuaire-multi-final.js?v=20260614-final"></script>
 </body>
 </html>
+
 
 
