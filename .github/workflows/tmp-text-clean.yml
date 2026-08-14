@@ -1,0 +1,38 @@
+name: Temporary Kourant text cleanup
+
+on:
+  push:
+    branches: [tmp-adherent-fix-20260814]
+    paths:
+      - '.github/workflows/tmp-text-clean.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-adherent-fix-20260814
+          fetch-depth: 0
+      - name: Clean remaining visible status wording
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=s.replace("qrTitle:'Scan het officiële profiel'","qrTitle:'Scan het DIGIYLYFE-profiel'")
+          s=s.replace("foot:'DIGIY BUILD • ملف رسمي •","foot:'DIGIY BUILD • أعضاء DIGIYLYFE •")
+          p.write_text(s,encoding='utf-8')
+          PY
+          ! grep -qi 'officiële profiel' index.html
+          ! grep -q 'ملف رسمي' index.html
+      - name: Commit
+        run: |
+          git config user.name 'DIGIYLYFE Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html
+          git commit -m 'Kourant : finir le wording adhérent multilingue'
+          git push origin HEAD:tmp-adherent-fix-20260814
