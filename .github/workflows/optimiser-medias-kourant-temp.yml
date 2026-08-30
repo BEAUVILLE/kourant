@@ -1,0 +1,59 @@
+name: Optimiser medias Kourant temporaire
+
+on:
+  push:
+    paths:
+      - '.github/workflows/optimiser-medias-kourant-temp.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  optimiser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Installer convertisseurs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y webp libavif-bin
+      - name: Convertir carte et logo
+        run: |
+          set -euo pipefail
+          mkdir -p media
+          curl -fL --retry 3 --retry-delay 2 'https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg' -o media/digiylyfe-logo-kourant.jpg
+          cwebp -quiet -q 82 carte-visite.png -o media/kourant-visuel.webp
+          avifenc --min 28 --max 35 --speed 6 carte-visite.png media/kourant-visuel.avif >/dev/null
+          cwebp -quiet -q 82 media/digiylyfe-logo-kourant.jpg -o media/digiylyfe-logo-kourant.webp
+          avifenc --min 28 --max 35 --speed 6 media/digiylyfe-logo-kourant.jpg media/digiylyfe-logo-kourant.avif >/dev/null
+          python3 - <<'PY'
+          from pathlib import Path
+          for f in ['carte-visite.png','media/kourant-visuel.webp','media/kourant-visuel.avif','media/digiylyfe-logo-kourant.jpg','media/digiylyfe-logo-kourant.webp','media/digiylyfe-logo-kourant.avif']:
+              p=Path(f); print(f'{f}={p.stat().st_size} bytes')
+          PY
+      - name: Basculer index
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          old_logo='<div class="logo"><img alt="Logo DIGIYLYFE" src="https://digiylyfe.net/wp-content/uploads/2026/03/digiylyfe_logo_qr.jpeg"></div>'
+          new_logo='<div class="logo"><picture><source type="image/avif" srcset="./media/digiylyfe-logo-kourant.avif"><source type="image/webp" srcset="./media/digiylyfe-logo-kourant.webp"><img alt="Logo DIGIYLYFE" src="./media/digiylyfe-logo-kourant.jpg" decoding="async"></picture></div>'
+          old_card='<div class="poster"><img id="poster" alt="Zal et Kourant" src="./carte-visite.png?v=20260814-adherents"></div>'
+          new_card='<div class="poster"><picture><source type="image/avif" srcset="./media/kourant-visuel.avif"><source type="image/webp" srcset="./media/kourant-visuel.webp"><img id="poster" alt="Zal et Kourant" src="./carte-visite.png?v=20260814-adherents" decoding="async" fetchpriority="high"></picture></div>'
+          if old_logo not in s: raise SystemExit('Bloc logo introuvable')
+          if old_card not in s: raise SystemExit('Bloc carte introuvable')
+          p.write_text(s.replace(old_logo,new_logo,1).replace(old_card,new_card,1),encoding='utf-8')
+          PY
+      - name: Publier et nettoyer
+        run: |
+          set -euo pipefail
+          rm -f .github/workflows/optimiser-medias-kourant-temp.yml
+          git config user.name 'DIGIYLYFE Media Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html media .github/workflows/optimiser-medias-kourant-temp.yml
+          git commit -m 'Media: optimiser Zal et Kourant'
+          git push origin main
