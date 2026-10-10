@@ -1,0 +1,28 @@
+name: KOURANT — contrôle accès propriétaire BUILD V3
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'tests/kourant-owner-access-v3.test.cjs'
+      - '.github/workflows/kourant-owner-access-v3.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'tests/kourant-owner-access-v3.test.cjs'
+      - '.github/workflows/kourant-owner-access-v3.yml'
+permissions:
+  contents: read
+jobs:
+  owner-entry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntaxe et sécurité portail propriétaire
+        run: |
+          node --check tests/kourant-owner-access-v3.test.cjs
+          node --test tests/kourant-owner-access-v3.test.cjs
