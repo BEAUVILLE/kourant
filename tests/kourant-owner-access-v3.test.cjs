@@ -30,5 +30,5 @@ test('No secret or owner email leaks to public site',()=>{
  assert.doesNotMatch(html,/serignesaliou351|service_role|sb_secret_|access_token=/i);
  assert.doesNotMatch(html,/auth\.signInWithOtp/);
  const scripts=html.match(/<script\b[^>]*>([\s\S]*?)<\/script>/g)||[];
- for(const tag of scripts){const code=tag.replace(/^<script\b[^>]*>/,'').replace(/<\/script>$/,'');if(code.trim())new vm.Script(code)}
+ for(const tag of scripts){if(/type=[\"']application\/ld\+json[\"']/.test(tag.slice(0,220)))continue;const code=tag.replace(/^<script\b[^>]*>/,'').replace(/<\/script>$/,'');if(code.trim())new vm.Script(code)}
 });
