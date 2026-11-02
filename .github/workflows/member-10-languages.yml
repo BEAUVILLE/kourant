@@ -1,0 +1,16 @@
+name: DIGIY fiches — WO et chinois simplifié
+on:
+  pull_request:
+    paths:
+      - index.html
+      - tests/test_member_fiche_10_lang.py
+      - .github/workflows/member-10-languages.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test traduction, navigation, QR, WhatsApp et JavaScript
+        run: python3 -m unittest discover -s tests -p 'test_*.py' -v
